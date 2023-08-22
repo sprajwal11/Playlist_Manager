@@ -17,8 +17,8 @@ Follow these steps to set up and run the application on your local machine.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/playlist-manager-flask.git
-   cd playlist-manager-flask
+   git clone https://github.com/sprajwal11/Playlist_Manager.git
+   cd playlist-manager
    ```
 
 2. Create and activate a virtual environment (recommended):
