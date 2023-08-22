@@ -115,10 +115,21 @@ def edit_playlist(playlist_id):
 @login_required
 def delete_playlist(playlist_id):
     playlist = Playlist.query.get_or_404(playlist_id)
+
+    if playlist.user != current_user:
+        abort(403)  # User doesn't have permission to delete this playlist
+
+    # Delete the associated songs
+    for song in playlist.songs:
+        db.session.delete(song)
+
+    # Delete the playlist
     db.session.delete(playlist)
     db.session.commit()
-    flash("Playlist deleted successfully!", "success")
+
+    flash("Playlist and its songs deleted successfully!", "success")
     return redirect(url_for("playlists"))
+
 
 
 # ... (Other routes and views)
