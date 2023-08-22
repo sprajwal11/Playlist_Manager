@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Song - Playlist Manager</title>
+</head>
+<body>
+    <h1>Edit Song</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="name">Song Name:</label>
+            {{ form.name() }}
+        </div>
+        <div>
+            <label for="scale">Scale:</label>
+            {{ form.scale() }}
+        </div>
+        <div>
+            <label for="tempo">Tempo:</label>
+            {{ form.tempo() }}
+        </div>
+        <div>
+            <label for="original_artist">Original Artist:</label>
+            {{ form.original_artist() }}
+        </div>
+        <div>
+            <label for="genre">Genre:</label>
+            {{ form.genre() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+</body>
+</html>

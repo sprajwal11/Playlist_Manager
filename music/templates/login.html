@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login - Playlist Manager
+{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto">
+    <h1 class="text-2xl font-semibold mb-4">Login</h1>
+    <form class="space-y-4" method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            <label class="block font-medium text-white">Email</label>
+            {{ form.email(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <div>
+            <label class="block font-medium text-white">Password</label>
+            {{ form.password(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" type="submit">Login</button>
+    </form>
+    <p class="mt-4 text-gray-700">Don't have an account? <a class="text-blue-500" href="{{ url_for('register') }}">Sign
+            up</a></p>
+</div>
+{% endblock %}

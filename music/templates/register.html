@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}
+Register - Playlist Manager
+{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto">
+    <h1 class="text-2xl font-semibold mb-4">Register</h1>
+    <form class="space-y-4" method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            <label class="block font-medium text-white">Name</label>
+            {{ form.name(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <div>
+            <label class="block font-medium text-white">Email</label>
+            {{ form.email(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <div>
+            <label class="block font-medium text-white">Password</label>
+            {{ form.password(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <div>
+            <label class="block font-medium text-white">Confirm Password</label>
+            {{ form.confirm_password(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" type="submit">Register</button>
+    </form>
+    <p class="mt-4 text-gray-700">Already have an account? <a class="text-blue-500" href="{{ url_for('login') }}">Log
+            in</a></p>
+</div>
+{% endblock %}

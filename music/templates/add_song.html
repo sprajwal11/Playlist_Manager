@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Song - Playlist Manager
+{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto">
+    <h1 class="text-2xl font-semibold mb-4">Edit Song</h1>
+    <form class="space-y-4" method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            <label class="block font-medium text-white">Name</label>
+            {{ form.name(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <div>
+            <label class="block font-medium text-white">Scale</label>
+            {{ form.scale(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <div>
+            <label class="block font-medium text-white">Tempo</label>
+            {{ form.tempo(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <div>
+            <label class="block font-medium text-white">Genre</label>
+            {{ form.genre(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <div>
+            <label class="block font-medium text-white">Original Artist</label>
+            {{ form.original_artist(class="block w-full px-4 py-2 border rounded-lg text-black") }}
+        </div>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" type="submit">Update Song</button>
+    </form>
+</div>
+{% endblock %}

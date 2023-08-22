@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home - Playlist Manager
+{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="text-4xl font-semibold mb-4">Welcome to Playlist Manager</h1>
+    {% if current_user.is_authenticated %}
+    <p class="text-lg">Hello, {{ current_user.name }}!
+<!--        <a class="text-blue-500" href="{{ url_for('logout') }}">Logout</a>-->
+    </p>
+    <a class="text-blue-500 block mt-2" href="{{ url_for('playlists') }}">My Playlists</a>
+    <a class="text-blue-500 block mt-2" href="{{ url_for('all_songs') }}">All Songs</a>
+    {% else %}
+    <p class="text-lg"><a class="text-blue-500" href="{{ url_for('register') }}">Sign Up</a> or <a class="text-blue-500"
+            href="{{ url_for('login') }}">Log In</a></p>
+    {% endif %}
+</div>
+{% endblock %}

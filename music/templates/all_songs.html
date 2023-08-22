@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+All Songs - Playlist Manager
+{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto">
+    <h1 class="text-2xl font-semibold mb-4">All Songs</h1>
+    <table class="mt-4 w-full border">
+        <thead>
+            <tr class="bg-gray-800 text-white">
+                <th class="py-2 px-4">#</th>
+                <th class="py-2 px-4">Name</th>
+                <th class="py-2 px-4">Scale</th>
+                <th class="py-2 px-4">Tempo</th>
+                <th class="py-2 px-4">Genre</th>
+                <th class="py-2 px-4">Original Artist</th>
+                <th class="py-2 px-4">Playlist</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for song in songs %}
+            <tr class="border-t">
+                <td class="py-2 px-4">{{ loop.index }}</td>
+                <td class="py-2 px-4">{{ song.name }}</td>
+                <td class="py-2 px-4">{{ song.scale }}</td>
+                <td class="py-2 px-4">{{ song.tempo }}</td>
+                <td class="py-2 px-4">{{ song.genre }}</td>
+                <td class="py-2 px-4">{{ song.original_artist }}</td>
+                <td class="py-2 px-4">{{ song.playlist.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

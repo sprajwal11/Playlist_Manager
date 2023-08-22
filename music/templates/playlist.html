@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ playlist.name }} - Playlist Manager
+{% endblock %}
+
+{% block content %}
+<div class="max-w-md mx-auto">
+    <h1 class="text-2xl font-semibold mb-4">{{ playlist.name }}</h1>
+    <a class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+        href="{{ url_for('add_song', playlist_id=playlist.id) }}">Add Song</a>
+    <table class="mt-4 w-full border">
+        <thead>
+            <tr class="bg-gray-800 text-white">
+                <th class="py-2 px-4">#</th>
+                <th class="py-2 px-4">Name</th>
+                <th class="py-2 px-4">Scale</th>
+                <th class="py-2 px-4">Tempo</th>
+                <th class="py-2 px-4">Genre</th>
+                <th class="py-2 px-4">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for song in songs %}
+            <tr class="border-t">
+                <td class="py-2 px-4">{{ loop.index }}</td>
+                <td class="py-2 px-4">{{ song.name }}</td>
+                <td class="py-2 px-4">{{ song.scale }}</td>
+                <td class="py-2 px-4">{{ song.tempo }}</td>
+                <td class="py-2 px-4">{{ song.genre }}</td>
+                <td class="py-2 px-4">
+                    <a class="text-blue-500 hover:underline" href="{{ url_for('edit_song', song_id=song.id) }}">Edit</a>
+                    <form class="inline" method="POST" action="{{ url_for('delete_song', song_id=song.id) }}">
+                        <button class="text-red-500 hover:underline" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
