@@ -67,7 +67,6 @@ def playlists():
     return render_template("playlists.html", playlists=user_playlists)
 
 
-# More routes for playlist creation, editing, and deletion can be added here
 
 @app.route("/playlist/<int:playlist_id>")
 @login_required
@@ -132,7 +131,6 @@ def delete_playlist(playlist_id):
 
 
 
-# ... (Other routes and views)
 
 @app.route("/add_song/<int:playlist_id>", methods=["GET", "POST"])
 @login_required
@@ -165,7 +163,6 @@ def delete_song(song_id):
 from flask import render_template
 
 
-# ... (Other imports and code)
 
 @app.route("/edit_song/<int:song_id>", methods=["GET", "POST"])
 @login_required
@@ -190,6 +187,3 @@ def edit_song(song_id):
     return render_template("edit_song.html", form=form)
 
 # More routes for song creation, editing, and deletion can be added here
-
-# if __name__ == "__main__":
-#     app.run(debug=True)
