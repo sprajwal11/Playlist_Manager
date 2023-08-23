@@ -8,7 +8,7 @@ Follow these steps to set up and run the application on your local machine.
 
 ### Prerequisites
 
-- Python (3.7 or higher)
+- Python (3.10 or higher)
 - Virtual environment (recommended)
 - Git
 
