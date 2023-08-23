@@ -42,7 +42,7 @@ Follow these steps to set up and run the application on your local machine.
 2. Set the appropriate values for the following variables in config.py:
 
     * SECRET_KEY - A secret key for securing sessions.
-    * SQLALCHEMY_DATABASE_URI - The URI for your    SQLite database.
+    * SQLALCHEMY_DATABASE_URI - The URI for your    MySQL database.
 
 
 ### Running the Application
