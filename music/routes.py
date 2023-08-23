@@ -67,7 +67,6 @@ def playlists():
     return render_template("playlists.html", playlists=user_playlists)
 
 
-
 @app.route("/playlist/<int:playlist_id>")
 @login_required
 def playlist(playlist_id):
@@ -130,8 +129,6 @@ def delete_playlist(playlist_id):
     return redirect(url_for("playlists"))
 
 
-
-
 @app.route("/add_song/<int:playlist_id>", methods=["GET", "POST"])
 @login_required
 def add_song(playlist_id):
@@ -161,7 +158,6 @@ def delete_song(song_id):
 
 
 from flask import render_template
-
 
 
 @app.route("/edit_song/<int:song_id>", methods=["GET", "POST"])
