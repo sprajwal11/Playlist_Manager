@@ -5,30 +5,30 @@ All Songs - Playlist Manager
 {% endblock %}
 
 {% block content %}
-<div class="max-w-md mx-auto">
+<div class="container mx-auto px-4 mt-8">
     <h1 class="text-2xl font-semibold mb-4">All Songs</h1>
-    <table class="mt-4 w-full border">
+    <table class="w-full table-auto bg-gray-900 text-white rounded">
         <thead>
             <tr class="bg-gray-800 text-white">
-                <th class="py-2 px-4">#</th>
-                <th class="py-2 px-4">Name</th>
-                <th class="py-2 px-4">Scale</th>
-                <th class="py-2 px-4">Tempo</th>
-                <th class="py-2 px-4">Genre</th>
-                <th class="py-2 px-4">Original Artist</th>
-                <th class="py-2 px-4">Playlist</th>
+                <th class="py-4 px-6 text-left font-bold">#</th>
+                <th class="py-4 px-6 text-left font-bold">Name</th>
+                <th class="py-4 px-6 text-left font-bold">Scale</th>
+                <th class="py-4 px-6 text-left font-bold">Tempo</th>
+                <th class="py-4 px-6 text-left font-bold">Genre</th>
+                <th class="py-4 px-6 text-left font-bold">Original Artist</th>
+                <th class="py-4 px-6 text-left font-bold">Playlist</th>
             </tr>
         </thead>
         <tbody>
             {% for song in songs %}
-            <tr class="border-t">
-                <td class="py-2 px-4">{{ loop.index }}</td>
-                <td class="py-2 px-4">{{ song.name }}</td>
-                <td class="py-2 px-4">{{ song.scale }}</td>
-                <td class="py-2 px-4">{{ song.tempo }}</td>
-                <td class="py-2 px-4">{{ song.genre }}</td>
-                <td class="py-2 px-4">{{ song.original_artist }}</td>
-                <td class="py-2 px-4">{{ song.playlist.name }}</td>
+            <tr class="border-t hover:bg-gray-800 hover:text-white transition-colors duration-300">
+                <td class="border-b border-gray-800 py-4 px-6">{{ loop.index }}</td>
+                <td class="border-b border-gray-800 py-4 px-6">{{ song.name }}</td>
+                <td class="border-b border-gray-800 py-4 px-6">{{ song.scale }}</td>
+                <td class="border-b border-gray-800 py-4 px-6">{{ song.tempo }}</td>
+                <td class="border-b border-gray-800 py-4 px-6">{{ song.genre }}</td>
+                <td class="border-b border-gray-800 py-4 px-6">{{ song.original_artist }}</td>
+                <td class="border-b border-gray-800 py-4 px-6">{{ song.playlist.name }}</td>
             </tr>
             {% endfor %}
         </tbody>
