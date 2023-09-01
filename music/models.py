@@ -36,3 +36,15 @@ class Song(db.Model):
     playlist_id = db.Column(db.Integer, db.ForeignKey('playlist.id'), nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, onupdate=datetime.utcnow)
+
+
+class SharedPlaylist(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    playlist_id = db.Column(db.Integer, db.ForeignKey('playlist.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    shared_with_user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+    # Define relationships with User and Playlist models
+    user = db.relationship('User', foreign_keys=[user_id])
+    shared_with_user = db.relationship('User', foreign_keys=[shared_with_user_id])
+    playlist = db.relationship('Playlist', back_populates='shared_with')
