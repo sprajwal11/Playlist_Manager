@@ -37,3 +37,11 @@ class SongForm(FlaskForm):
     original_artist = StringField('Original Artist')
     genre = StringField('Genre')
     submit = SubmitField('Add Song')
+
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
+
+class SharePlaylistForm(FlaskForm):
+    recipient_identifier = StringField('Recipient Email', validators=[DataRequired(), Email()])
+    submit = SubmitField('Share Playlist')
